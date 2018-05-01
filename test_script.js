@@ -1,6 +1,9 @@
+// test script connects to a psql databsae
+
 const { Client } = require("pg");
 const settings = require("./settings"); // settings.json
 
+// create new client object by calling Client function we deconstructed above
 const client = new Client({
   user      : settings.user,
   password  : settings.password,
@@ -42,3 +45,5 @@ function listRows(list) {
     console.log(`${index}: ${row.first_name} ${row.last_name}, born ${row.birthdate}`);
   });
 }
+
+
